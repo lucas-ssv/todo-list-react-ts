@@ -1,7 +1,8 @@
-import { PlusCircle, Circle, Trash } from '@phosphor-icons/react'
+import { PlusCircle } from '@phosphor-icons/react'
 
 import { Header } from './components/Header'
 import styles from './App.module.css'
+import { Task } from './components/Task'
 
 function App () {
   return (
@@ -27,18 +28,7 @@ function App () {
             </div>
           </header>
           <section className={styles.tasksContainer}>
-            <div className={styles.task}>
-              <button className={styles.checkbox}>
-                <Circle size={24} />
-              </button>
-              <p>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer.
-              </p>
-              <button className={styles.deleteTask}>
-                <Trash size={24} />
-              </button>
-            </div>
+            <Task />
           </section>
         </div>
       </main>
