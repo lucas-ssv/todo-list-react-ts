@@ -20,6 +20,10 @@
   --font-md: 1rem;
 }
 
+:focus {
+  outline: 1px solid var(--blue);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +36,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+button {
+  cursor: pointer;
+}
 
 body, input, textarea, button {
   font-family: 'Inter', sans-serif;

@@ -1,0 +1,120 @@
+.header {
+  background: var(--gray-700);
+  height: 12.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  max-width: 45rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: -1.8rem;
+}
+
+.form input {
+  flex: 1;
+  background: var(--gray-500);
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+
+.form button[type='submit'] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-size: var(--font-sm);
+  font-weight: bold;
+  border: 0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.form button[type='submit'] svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tasksList {
+  margin-top: 4rem;
+}
+
+.tasksList .tasksListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasksList .tasksListHeader .tasksInfo strong {
+  margin-right: 0.5rem;
+}
+
+.tasksList .tasksListHeader .tasksInfo strong.taskCreated {
+  color: var(--blue);
+}
+
+.tasksList .tasksListHeader .tasksInfo strong.taskCompleted {
+  color: var(--purple);
+}
+
+.tasksList .tasksListHeader .tasksInfo span {
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-size: var(--font-xs);
+  font-weight: bold;
+  padding: 0.125rem 0.5rem;
+  border-radius: 16px;
+}
+
+.tasksContainer {
+  margin-top: 1.5rem;
+}
+
+.tasksContainer .task {
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tasksContainer .task .checkbox {
+  background: 0;
+  border: 0;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.tasksContainer .task .checkbox svg {
+  color: var(--blue);
+}
+
+.tasksContainer .task p {
+  color: var(--gray-100);
+  font-size: var(--font-sm);
+  line-height: 140%;
+}
+
+.tasksContainer .task .deleteTask {
+  background: 0;
+  border: 0;
+  color: var(--gray-300);
+  line-height: 0;
+  border-radius: 2px;
+}
