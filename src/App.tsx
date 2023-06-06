@@ -1,14 +1,12 @@
 import { PlusCircle, Circle, Trash } from '@phosphor-icons/react'
 
-import Logo from './assets/logo.svg'
+import { Header } from './components/Header'
 import styles from './App.module.css'
 
 function App () {
   return (
     <div>
-      <header className={styles.header}>
-        <img src={Logo} alt='Logo ToDo List' />
-      </header>
+      <Header />
       <main className={styles.content}>
         <form className={styles.form}>
           <input type='text' placeholder='Adicione uma nova tarefa' />
