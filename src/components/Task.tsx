@@ -1,12 +1,11 @@
-import { Circle, Trash } from '@phosphor-icons/react'
+import { Trash } from '@phosphor-icons/react'
+import { Checkbox } from './Checkbox'
 import styles from './Task.module.css'
 
 export function Task () {
   return (
     <div className={styles.task}>
-      <button className={styles.checkbox}>
-        <Circle size={24} />
-      </button>
+      <Checkbox />
       <p>
         Integer urna interdum massa libero auctor neque turpis turpis semper.
         Duis vel sed fames integer.
