@@ -1,23 +1,22 @@
-import { useState } from 'react'
 import { Trash } from '@phosphor-icons/react'
 import { Checkbox } from './Checkbox'
 import styles from './Task.module.css'
 
 type Props = {
   content: string
+  isChecked?: boolean
+  onCheck: () => void
 }
 
-export function Task ({ content }: Props) {
-  const [isCheckedTask, setIsCheckedTask] = useState<boolean>()
-
+export function Task ({ content, isChecked = false, onCheck }: Props) {
   function handleCheckTask () {
-    setIsCheckedTask(isCheckedTask => !isCheckedTask)
+    onCheck()
   }
 
   return (
     <div className={styles.task}>
-      <Checkbox onClick={handleCheckTask} isChecked={isCheckedTask} />
-      <p>{content}</p>
+      <Checkbox onClick={handleCheckTask} isChecked={isChecked} />
+      <p className={isChecked ? styles.completedTask : ''}>{content}</p>
       <button className={styles.deleteTask}>
         <Trash size={24} />
       </button>

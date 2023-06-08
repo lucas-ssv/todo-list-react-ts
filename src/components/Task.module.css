@@ -20,6 +20,11 @@
   line-height: 140%;
 }
 
+.task .completedTask {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
 .task .deleteTask {
   background: 0;
   border: 0;
