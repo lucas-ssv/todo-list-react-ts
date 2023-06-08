@@ -6,18 +6,15 @@ type Props = {
   content: string
   isChecked?: boolean
   onCheck: () => void
+  onDelete: () => void
 }
 
-export function Task ({ content, isChecked = false, onCheck }: Props) {
-  function handleCheckTask () {
-    onCheck()
-  }
-
+export function Task ({ content, isChecked = false, onCheck, onDelete }: Props) {
   return (
     <div className={styles.task}>
-      <Checkbox onClick={handleCheckTask} isChecked={isChecked} />
+      <Checkbox onClick={onCheck} isChecked={isChecked} />
       <p className={isChecked ? styles.completedTask : ''}>{content}</p>
-      <button className={styles.deleteTask}>
+      <button className={styles.deleteTask} onClick={onDelete}>
         <Trash size={24} />
       </button>
     </div>

@@ -49,6 +49,11 @@ function App () {
     setTasks(tasksList)
   }
 
+  function handleDeleteTask (taskId: number) {
+    const tasksList = tasks.filter(task => task.id !== taskId)
+    setTasks(tasksList)
+  }
+
   return (
     <div>
       <Header />
@@ -94,6 +99,7 @@ function App () {
                 key={task.id}
                 content={task.content}
                 onCheck={() => handleCheckTask(task.id)}
+                onDelete={() => handleDeleteTask(task.id)}
                 isChecked={task.isChecked}
               />
             ))}
