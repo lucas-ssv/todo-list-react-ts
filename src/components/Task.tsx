@@ -3,7 +3,11 @@ import { Trash } from '@phosphor-icons/react'
 import { Checkbox } from './Checkbox'
 import styles from './Task.module.css'
 
-export function Task () {
+type Props = {
+  content: string
+}
+
+export function Task ({ content }: Props) {
   const [isCheckedTask, setIsCheckedTask] = useState<boolean>()
 
   function handleCheckTask () {
@@ -13,10 +17,7 @@ export function Task () {
   return (
     <div className={styles.task}>
       <Checkbox onClick={handleCheckTask} isChecked={isCheckedTask} />
-      <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
-      </p>
+      <p>{content}</p>
       <button className={styles.deleteTask}>
         <Trash size={24} />
       </button>

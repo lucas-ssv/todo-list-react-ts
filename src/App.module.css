@@ -73,3 +73,28 @@
 .tasksContainer {
   margin-top: 1.5rem;
 }
+
+.tasksContainer .tasksEmpty hr {
+  border: 1px solid var(--gray-400);
+}
+
+.tasksContainer .tasksEmpty .tasksEmptyInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.tasksContainer .tasksEmpty .tasksEmptyInfo svg {
+  color: var(--gray-400);
+}
+
+.tasksContainer .tasksEmpty .tasksEmptyInfo strong {
+  color: var(--gray-300);
+  margin-top: 1rem;
+  line-height: 140%;
+}
+
+.tasksContainer .tasksEmpty .tasksEmptyInfo p {
+  color: var(--gray-300);
+}
