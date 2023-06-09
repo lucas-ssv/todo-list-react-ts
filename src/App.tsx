@@ -47,6 +47,7 @@ function App () {
 
   function handleDeleteTask (taskId: number) {
     const tasksList = tasks.filter(task => task.id !== taskId)
+    setStorageTasks(tasksList)
     setTasks(tasksList)
   }
 
