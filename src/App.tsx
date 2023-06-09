@@ -41,6 +41,7 @@ function App () {
       }
       return task
     })
+    setStorageTasks(tasksList)
     setTasks(tasksList)
   }
 
