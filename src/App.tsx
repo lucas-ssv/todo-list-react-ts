@@ -1,11 +1,11 @@
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react'
+import { ChangeEvent, FormEvent, useMemo, useEffect, useState } from 'react'
 import { ClipboardText, PlusCircle } from '@phosphor-icons/react'
 
+import { getStorageTasks, setStorageTasks } from './storage/storageTask'
 import { Header } from './components/Header'
 import { TaskDTO } from './dtos/TaskDTO'
 import { Task } from './components/Task'
 import styles from './App.module.css'
-import { setStorageTasks } from './storage/storageTask'
 
 function App () {
   const [tasks, setTasks] = useState<TaskDTO[]>([])
@@ -48,6 +48,15 @@ function App () {
     const tasksList = tasks.filter(task => task.id !== taskId)
     setTasks(tasksList)
   }
+
+  function loadTasks () {
+    const tasks = getStorageTasks()
+    setTasks(tasks)
+  }
+
+  useEffect(() => {
+    loadTasks()
+  }, [])
 
   return (
     <div>
