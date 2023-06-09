@@ -2,17 +2,13 @@ import { ChangeEvent, FormEvent, useMemo, useState } from 'react'
 import { ClipboardText, PlusCircle } from '@phosphor-icons/react'
 
 import { Header } from './components/Header'
+import { TaskDTO } from './dtos/TaskDTO'
 import { Task } from './components/Task'
 import styles from './App.module.css'
-
-type TaskProps = {
-  id: number
-  content: string
-  isChecked: boolean
-}
+import { setStorageTasks } from './storage/storageTask'
 
 function App () {
-  const [tasks, setTasks] = useState<TaskProps[]>([])
+  const [tasks, setTasks] = useState<TaskDTO[]>([])
   const [newTask, setNewTask] = useState('')
   const sizeTasks = useMemo(() => tasks.length, [tasks])
   const tasksCompletedCount = useMemo(
@@ -23,14 +19,13 @@ function App () {
   function handleAddNewTask (event: FormEvent) {
     event.preventDefault()
     if (newTask.trim().length > 0) {
-      setTasks(oldTasks => [
-        ...oldTasks,
-        {
-          id: tasks.length + 1,
-          content: newTask,
-          isChecked: false
-        }
-      ])
+      const newCurrentTask = {
+        id: tasks.length + 1,
+        content: newTask,
+        isChecked: false
+      }
+      setTasks(oldTasks => [...oldTasks, newCurrentTask])
+      setStorageTasks([...tasks, newCurrentTask])
       setNewTask('')
     }
   }
